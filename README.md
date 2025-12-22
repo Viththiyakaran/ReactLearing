@@ -6,6 +6,10 @@ The focus is on **hands-on learning**, clear examples, and small mini projects.
 
 ---
 
+## 🎨 Styling with Tailwind CSS
+
+This project uses **Tailwind CSS** for styling React components. Tailwind allows you to use utility-first classes to build responsive and modern UIs quickly.
+
 ## 🌐 Live Demo
 
 Check out the live React app deployed on Vercel:  
