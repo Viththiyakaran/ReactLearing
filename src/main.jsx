@@ -6,6 +6,7 @@ import JSX from "./basics/JSX.jsx";
 import Conditional from "./rendering/Conditional.jsx";
 import Loading from "./rendering/Loading.jsx";
 import LoadingLangepage from "./practice/LoadingLandpage.jsx";
+import LoginPractice from "./practice/LoginPractice.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")).render(
     {/* <JSX /> */}
     {/* <Conditional /> */}
     {/* <Loading /> */}
-    <LoadingLangepage />
+    {/* <LoadingLangepage /> */}
+    <LoginPractice />
   </StrictMode>
 );
