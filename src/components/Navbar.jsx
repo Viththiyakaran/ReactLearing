@@ -21,14 +21,25 @@ function Navbar() {
           </NavLink>
 
           <NavLink
-            to="/user"
+            to="/TodoApp"
             className={({ isActive }) =>
               isActive
                 ? "text-blue-400 font-semibold"
                 : "text-gray-300 hover:text-white"
             }
           >
-            User
+            TodoApp
+          </NavLink>
+
+          <NavLink
+            to="/WorkWithAPI"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-400 font-semibold"
+                : "text-gray-300 hover:text-white"
+            }
+          >
+            WorkWithAPI
           </NavLink>
         </div>
       </div>

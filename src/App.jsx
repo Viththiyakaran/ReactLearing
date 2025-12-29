@@ -51,8 +51,9 @@
 
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
-import Home from "./pages/Home.jsx";
-import User from "./pages/User.jsx";
+import LandingPage from "./practice/LoadingLandpage.jsx";
+import TodoApp from "./practice/TodoAppPractice.jsx";
+import WorkWithAPI from "./practice/WorkWithApi.jsx";
 
 function App() {
   return (
@@ -60,8 +61,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/user" element={<User />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/TodoApp" element={<TodoApp />} />
+        <Route path="/WorkWithAPI" element={<WorkWithAPI />} />
       </Routes>
     </>
   );
