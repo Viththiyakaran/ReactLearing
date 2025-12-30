@@ -4,7 +4,7 @@ import { useState } from "react";
 const MENU_ITEMS = [
   { name: "Home", path: "/" },
   { name: "TodoApp", path: "/TodoApp" },
-  { name: "WorkWithAPI", path: "/WorkWithAPI" },
+  { name: "CRUD", path: "/CRUD" },
   { name: "Axios Practice", path: "/Axios" },
   { name: "Contact", path: "/Contact" },
 ];
