@@ -1,57 +1,65 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+
+const MENU_ITEMS = [
+  { name: "Home", path: "/" },
+  { name: "TodoApp", path: "/TodoApp" },
+  { name: "WorkWithAPI", path: "/WorkWithAPI" },
+  { name: "Axios Practice", path: "/Axios" },
+];
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    `block px-3 py-2 rounded-md transition-colors duration-200 ${
+      isActive
+        ? "text-blue-400 font-semibold"
+        : "text-gray-300 hover:text-white"
+    }`;
+
   return (
-    <nav className="bg-gray-900 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <nav className="bg-gray-900">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-white text-xl font-bold">ReactApp</h1>
+        <h1 className="text-white text-xl font-bold tracking-wide">ReactApp</h1>
 
-        {/* Menu */}
-        <div className="space-x-6">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive
-                ? "text-blue-400 font-semibold"
-                : "text-gray-300 hover:text-white"
-            }
-          >
-            Home
-          </NavLink>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6">
+          {MENU_ITEMS.map((item) => (
+            <NavLink key={item.path} to={item.path} className={linkClass}>
+              {item.name}
+            </NavLink>
+          ))}
+        </div>
 
-          <NavLink
-            to="/TodoApp"
-            className={({ isActive }) =>
-              isActive
-                ? "text-blue-400 font-semibold"
-                : "text-gray-300 hover:text-white"
-            }
-          >
-            TodoApp
-          </NavLink>
+        {/* Mobile Button */}
+        <button
+          className="md:hidden text-gray-300 text-2xl transition-transform duration-200"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? "✕" : "☰"}
+        </button>
+      </div>
 
-          <NavLink
-            to="/WorkWithAPI"
-            className={({ isActive }) =>
-              isActive
-                ? "text-blue-400 font-semibold"
-                : "text-gray-300 hover:text-white"
-            }
-          >
-            WorkWithAPI
-          </NavLink>
-
-          <NavLink
-            to="/Axios"
-            className={({ isActive }) =>
-              isActive
-                ? "text-blue-400 font-semibold"
-                : "text-gray-300 hover:text-white"
-            }
-          >
-            Axios Practice
-          </NavLink>
+      {/* Mobile Menu with Animation */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-6 pb-4 space-y-2">
+          {MENU_ITEMS.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={linkClass}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </NavLink>
+          ))}
         </div>
       </div>
     </nav>
