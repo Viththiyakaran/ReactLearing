@@ -22,7 +22,15 @@ function Navbar() {
     <nav className="bg-gray-900">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-white text-xl font-bold tracking-wide">ReactApp</h1>
+        <h1 className="text-xl font-bold tracking-wide">
+          <NavLink
+            to="/"
+            className="text-white hover:text-blue-400 transition-colors"
+            aria-label="Go to homepage"
+          >
+            ReactApp
+          </NavLink>
+        </h1>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
